@@ -32,7 +32,7 @@
 
 let nome = "Alex"
 let idade = "17"
-let bairro = "Jardim Ângela"
+let bairro = "Jardim Aracati"
 let cidade = "São Paulo"
 
 console.log(` nome: ${nome} \n Idade: ${idade}  \n bairro: ${bairro}  \n Cidade: ${cidade}`)
@@ -131,6 +131,12 @@ console.log(`Media do aluno na UC09: ${media} `);
    RESULTADO ESPERADO: Sobram 2 pedaços */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+let pedacosPizza = 8
+let pessoas = 3
+let pedacosPcada = Number(8 % 3);
+console.log(`Sombram ${pedacosPcada} pedaços`);
+
+
 
 /* ═══ EXERCÍCIO 8 — 🎂 Pode entrar no rolê? ═══
    CONTEXTO: o rolê de sábado é 18+.
@@ -142,6 +148,14 @@ console.log(`Media do aluno na UC09: ${media} `);
    RESULTADO ESPERADO: true (ou false, conforme a idade) */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+idadeRole = 17
+
+if (idadeRole >= 18) {
+   console.log(` Você está liberado para ir para o Rolê de sábado`)
+} else {
+   console.log(`Infelizmente você não poderá ir para o rolê`)
+}
+
 
 /* ═══ EXERCÍCIO 9 — 🪪 RG *E* dinheiro ═══
    CONTEXTO: para entrar no rolê precisa de RG E dinheiro da entrada.
@@ -152,6 +166,16 @@ console.log(`Media do aluno na UC09: ${media} `);
    RESULTADO ESPERADO: false (com &&)  /  true (com ||) */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+let temRG = true
+temDinheiro = false
+
+console.log(temRG && temDinheiro);
+
+let TemRG = true
+let TemDinheiro = false
+console.log(TemRG || TemDinheiro );
+
+
 
 /* ═══ EXERCÍCIO 10 — ⚽ Contador de gols ═══
    CONTEXTO: o Brasil fez mais um! 🥳
@@ -159,6 +183,11 @@ console.log(`Media do aluno na UC09: ${media} `);
    (ou gols = gols + 1). Mostre antes e depois.
    RESULTADO ESPERADO: 2 / 3 */
 // ✍️ SOLUÇÃO DA DUPLA:
+
+let gols = 2
+let total = Number(gols + 1);
+console.log(`Total de gols: ${total}`); 
+
 
 
 /* ═══ EXERCÍCIO 11 — 🔒 const × let ═══
@@ -170,14 +199,15 @@ console.log(`Media do aluno na UC09: ${media} `);
        let saldoBanco = 50;
        saldoBanco = 45;        // pode?
        // cpf = "000";         // pode?
-   PREVISÃO DA DUPLA: ____________________
+   PREVISÃO DA DUPLA: O CPF continua pois ele está definido dentro de uma const, const = constante, ou seja, nunca muda sempre constante(Sempre com que já está definido). Já o saldo muda, pois ele esta em uma variável let, a qual aceita alterações.____________________
    RESULTADO ESPERADO: saldoBanco muda numa boa; cpf dá
    TypeError: Assignment to constant variable. */
 const cpf = "111.222.333-44";
+//cpf = "555.555.555.55": caso eu fizesse isso daria erro, pois eu alterei uma const. No casso o erro: Assignment to constant variable. 
 let saldoBanco = 50;
 saldoBanco = 45;
 console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
-// cpf = "000";   // <- descomente, veja o erro, comente de volta
+
 
 
 /* ═══ EXERCÍCIO 12 — 💬 A frase completa ═══
@@ -193,7 +223,7 @@ console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
    Meu nome é Duda, tenho 19 anos e moro em Santo Amaro. */
 // ✍️ SOLUÇÃO DA DUPLA:
 
-console.log(`Meu nome é ${nome}, tenho ${idade}, moro no ${bairro} bairro da Cidade de ${cidade}`)
+console.log(`Meu nome é ${nome}, tenho ${idade} anos, moro no ${bairro} bairro da Cidade de ${cidade}`)
 
 
 /* ═══ EXERCÍCIO 13 — 🖥️ Aparecer NA PÁGINA (DOM) ═══
@@ -208,6 +238,9 @@ console.log(`Meu nome é ${nome}, tenho ${idade}, moro no ${bairro} bairro da Ci
        document.getElementById("umId").textContent = "um texto";
    RESULTADO ESPERADO: a frase aparece na caixa da página. */
 // ✍️ SOLUÇÃO DA DUPLA:
+
+console.log(document.getElementById("saida").textContent = "Rebeca")
+
 
 
 
@@ -228,6 +261,9 @@ console.log(`Meu nome é ${nome}, tenho ${idade}, moro no ${bairro} bairro da Ci
    RESULTADO ESPERADO: digitou "Rebeca" e clicou → Bem-vindo(a), Rebeca! */
 function aoClicar() {
   // ✍️ SOLUÇÃO DA DUPLA:
+document.getElementById("nomeInput").value
+console.log("Seja Bem-Vindo(a), " + document.getElementById("nomeInput").value +"!")
+
 
 }
 document.getElementById("btn").addEventListener("click", aoClicar);
@@ -252,8 +288,8 @@ document.getElementById("btn").addEventListener("click", aoClicar);
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar cada linha via código?
-   [ ] Commit feito nos DOIS repositórios do GitHub?
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem explicar cada linha via código?
+   [✅] Commit feito nos DOIS repositórios do GitHub?
         git add . && git commit -m "Semana 03 resolvida — dupla X & Y"
    ============================================================ */

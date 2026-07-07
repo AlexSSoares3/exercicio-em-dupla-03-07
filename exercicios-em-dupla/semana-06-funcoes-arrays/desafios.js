@@ -29,6 +29,11 @@
    RESULTADO ESPERADO: a frase 3 vezes */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+function vinheta() {console.log("Você ouve a Rádio Largo 13!");}
+vinheta()
+vinheta()
+vinheta()
+
 
 /* ═══ EXERCÍCIO 2 — 🎤 Chamando a galera pelo nome ═══
    CONTEXTO: o MC do rolê chama cada um pelo nome.
@@ -37,6 +42,11 @@
    DICA: o parâmetro é a ENTRADA — cada chamada, um valor.
    RESULTADO ESPERADO: 🎤 Sobe aí, Duda! / 🎤 Sobe aí, João! */
 // ✍️ SOLUÇÃO DA DUPLA:
+
+function chamar(nome) {console.log(`Sobe aí, ${nome}`)}
+chamar("Duda!")
+chamar("João!")
+
 
 
 /* ═══ EXERCÍCIO 3 — 💵 O dobro do cachê ═══
@@ -49,6 +59,13 @@
    RESULTADO ESPERADO: 300 */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+function dobro(valor) {
+   return valor * 2
+}
+let SegundoFreela = dobro(150)
+
+console.log(SegundoFreela);
+
 
 /* ═══ EXERCÍCIO 4 — 🍕 Rachando a conta (2 parâmetros) ═══
    CONTEXTO: pizza + refri, dividido entre a galera.
@@ -56,6 +73,12 @@
    Mostre rachar(72, 4).
    RESULTADO ESPERADO: 18 */
 // ✍️ SOLUÇÃO DA DUPLA:
+
+function rachar(valorTotal, pessoas) {
+   return valorTotal / pessoas
+}
+console.log(rachar(72, 4))
+
 
 
 /* ═══ EXERCÍCIO 5 — 🏹 A versão arrow ═══
@@ -67,6 +90,9 @@
    DICA: nome NOVO de propósito — redeclarar 'dobro' dá erro.
    RESULTADO ESPERADO: 42 */
 // ✍️ SOLUÇÃO DA DUPLA:
+
+const dobroSeta = (valor) => valor * 2;
+console.log(dobroSeta(21));
 
 
 /* ═══ EXERCÍCIO 6 — 👋 Parâmetro padrão ═══

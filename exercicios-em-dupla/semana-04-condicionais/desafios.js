@@ -346,8 +346,8 @@ if (fimDeSemana || brasilJoga && grana >= 50) {
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar cada if via código?
-   [ ] Commit nos DOIS GitHubs:
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem explicar cada if via código?
+   [✅] Commit nos DOIS GitHubs:
         git commit -m "Semana 04 resolvida — dupla X & Y"
    ============================================================ */

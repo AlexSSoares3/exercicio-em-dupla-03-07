@@ -77,6 +77,14 @@ console.log(`R$ ${semana} DEU! Bora pro show!`)
    RESULTADO ESPERADO: Tentativa 1... / 2... / 3... / 🔓 Conectou! */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+let tentativa = 1;
+
+do {
+   console.log(`Tentativa ${tentativa}`);
+   tentativa++;
+} while (tentativa <= 3);
+
+console.log("Conectou!")
 
 
 
@@ -234,7 +242,13 @@ let linhas = ["637P", "695X", "675P", "746A", "709M"];
    (746A e 709M NÃO aparecem) */
 // ✍️ SOLUÇÃO DA DUPLA:
 
-
+for (let linha of linhas) {
+   if (linha === "675P") {
+      console.log("Achei o 675P!")
+      break;
+   }
+   console.log(`Vendo: ${linha}`)
+}
 
 
 /* ═══ EXERCÍCIO 13 — 🧾 Pulando os zerados (continue) ═══
@@ -247,7 +261,12 @@ let extrato = [12, 0, 25, 0, 8];
    RESULTADO ESPERADO: gasto: R$ 12 / gasto: R$ 25 / gasto: R$ 8 */
 // ✍️ SOLUÇÃO DA DUPLA:
 
-
+for (let valor of extrato) {
+   if (valor === 0) {
+      continue;
+   }
+   console.log(`Gasto: R$ ${valor}`);
+}
 
 
 /* ═══ EXERCÍCIO 14 — 🐛 CONSERTE o loop infinito ═══
@@ -264,9 +283,11 @@ let extrato = [12, 0, 25, 0, 8];
 // ✍️ SOLUÇÃO DA DUPLA (a versão consertada):
 
 let fila = 5;
-       while (fila <= 5)  {
-         console.log("Faltam " + fila + " pessoas na fila do RG");
-       }
+
+while (fila > 0) {
+   console.log("Faltam " + fila + " Pessoas na fila do RG");
+   fila --;
+}
 
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: fechamento do caixa ═══
@@ -287,12 +308,24 @@ let vendas = [35, 80, 12, 95, 47, 60];
    RESULTADO ESPERADO: Total: R$ 329 / Maior venda: R$ 95 */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+let totalVendas = 0;
+let maiorVenda = 0;
+
+for (let i = 0; i < vendas.length; i++) {
+   totalVendas += vendas[i];
+
+   if (vendas[i] > maiorVenda) {
+      maiorVenda = vendas[i];
+   }
+}
+console.log(`Total: R$ ${totalVendas}`);
+console.log(`Maior venda: R$ ${maiorVenda}`)
 
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem apontar, em cada loop, quem impede o infinito?
-   [ ] Commit nos DOIS GitHubs:
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem apontar, em cada loop, quem impede o infinito?
+   [✅] Commit nos DOIS GitHubs:
         git commit -m "Semana 05 resolvida — dupla X & Y"
    ============================================================ */

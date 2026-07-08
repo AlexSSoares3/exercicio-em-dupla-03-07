@@ -103,6 +103,12 @@ console.log(dobroSeta(21));
    RESULTADO ESPERADO:
    Bem-vindo(a), visitante! / Bem-vindo(a), Rebeca! */
 // ✍️ SOLUÇÃO DA DUPLA:
+let nome = "Visitante"
+function saudar(nome) {
+   console.log(`Bem-vindo, ${nome}`)
+}
+saudar(nome)
+saudar("Rebeca")
 
 
 /* ═══ EXERCÍCIO 7 — 🔭 Escopo: onde a variável vive ═══
@@ -115,7 +121,7 @@ console.log(dobroSeta(21));
        }
        calcularCache();
        // console.log("fora: " + cache);
-   PREVISÃO DA DUPLA: ____________________
+   PREVISÃO DA DUPLA: _dentro: 500___________________
    DICA: variável de dentro só vive lá dentro (escopo local).
    RESULTADO ESPERADO: "dentro: 500" funciona; a linha de fora dá
    ReferenceError: cache is not defined */
@@ -124,7 +130,7 @@ function calcularCache() {
   console.log("dentro: " + cache);
 }
 calcularCache();
-// console.log("fora: " + cache);   // <- descomente, veja, comente
+// console.log("fora: " + cache);   // A variável cache é um objeto que está trancado lá dentro. Quem está na rua (o código de fora) não consegue ver e nem mexer no que está dentro da casa, a menos que a função decida "retornar" (dar) esse valor para o mundo exterior.
 
 
 /* ═══ EXERCÍCIO 8 — 🗳️ Pode votar? ═══
@@ -141,6 +147,24 @@ calcularCache();
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
+ function situacaoVoto(idade) {
+   if (idade >= 18) {
+      return "Voto obrigatório"
+   } else if  (idade >= 16) {
+      return "Voto opcional!"
+   } else {
+      return "Ainda não vota"
+   }
+
+      
+
+ }
+
+console.log(situacaoVoto(15))
+console.log(situacaoVoto(17))
+console.log(situacaoVoto(20))
+
+
 /* ═══ EXERCÍCIO 9 — 📋 O corre da semana (array básico) ═══
    CONTEXTO: sua agenda da semana num array.
    TAREFA: crie o array 'corre' com ["aula", "estágio", "academia",
@@ -149,6 +173,17 @@ calcularCache();
    DICA: último =  corre[corre.length - 1]
    RESULTADO ESPERADO: aula / freela / 4 */
 // ✍️ SOLUÇÃO DA DUPLA:
+
+const corre = ["aula", "estágio", "academia", "freela"]
+
+const primeiroItem = corre [0];
+const ultimoItem = corre [corre.length - 1];
+const totalItens = corre.length;
+
+console.log(`${primeiroItem} / ${ultimoItem} / ${totalItens}`)
+
+
+
 
 
 /* ═══ EXERCÍCIO 10 — 🛒 A lista da feira (push/pop) ═══
@@ -159,7 +194,13 @@ calcularCache();
    RESULTADO ESPERADO: ["banana", "tomate", "pastel"] */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+const listFeira = ["Banana", "tomate"];
 
+listFeira.push("Pastel", "Caldo de cana")
+
+listFeira.pop();
+
+console.log(listFeira)
 /* ═══ EXERCÍCIO 11 — 🔍 Tem pastel? (includes) ═══
    CONTEXTO: conferindo a lista antes de sair de casa.
    TAREFA: na sua lista do exercício 10, use includes para testar
@@ -167,6 +208,15 @@ calcularCache();
    EXEMPLO (molde):  lista.includes("item")  → true/false
    RESULTADO ESPERADO: true / false */
 // ✍️ SOLUÇÃO DA DUPLA:
+
+const listaFeira = ["banana", "tomate", "pastel"]
+
+const temPastel = listaFeira.includes("pastel")
+const temPicanha = listaFeira.includes("picanha")
+
+console.log(`${temPastel} / ${temPicanha}`)
+
+
 
 
 /* ═══ EXERCÍCIO 12 — 🧮 Função que soma lista ═══
@@ -184,6 +234,22 @@ calcularCache();
    RESULTADO ESPERADO: 60 / 35.8 */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+function somarLista(numeros) {
+   let total = 0;
+
+   for (let i = 0; i < numeros.length; i++) {
+      total += numeros[i]
+   }
+   return total;
+}
+
+const resultado1 = somarLista([10, 20, 30]);
+const resultado2 = somarLista([8.8, 15, 12]);
+
+console.log(`${resultado1} / ${resultado2}`)
+
+
+
 
 /* ═══ EXERCÍCIO 13 — 🎓 Contando aprovados ═══
    CONTEXTO: as notas da turma saíram: */
@@ -198,6 +264,18 @@ let notasTurma = [8, 4, 7, 9, 5, 10];
    RESULTADO ESPERADO: 4 */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+function contarAprovados(notas) {
+   let aprovados = 0;
+
+   for (let i = 0; i < notas.length; i++){
+      if (notas [i] >= 7) {
+         aprovados++;
+      }
+   }
+   return aprovados;
+}
+console.log(contarAprovados(notasTurma));
+
 
 /* ═══ EXERCÍCIO 14 — 📣 Função + for...of ═══
    CONTEXTO: o professor faz a chamada da TI116.
@@ -207,6 +285,13 @@ let notasTurma = [8, 4, 7, 9, 5, 10];
    RESULTADO ESPERADO: 3 linhas de presença */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+function fazerChamada(lista) {
+   for (const nome of lista) {
+      console.log(`${nome} presente!`)
+   }
+}
+
+fazerChamada(["Duda", "Rebeca", "Vitor"])
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: o caixa completo ═══
    CONTEXTO: fim do expediente na lanchonete. As vendas: */
@@ -229,10 +314,38 @@ let vendasDia = [35, 80, 12, 95, 47];
 
 
 
+function fecharCaixa(vendas) {
+   
+    let total = 0;
+    let maiorVenda = vendas[0]; 
+
+    
+    for (const venda of vendas) {
+        total += venda; 
+
+        if (venda > maiorVenda) {
+            maiorVenda = venda; 
+        }
+    }
+
+    
+    return `Caixa: R$ ${total} | Maior venda: R$ ${maiorVenda}`;
+}
+
+
+const resumoHoje = fecharCaixa(vendasDia);
+console.log(resumoHoje);
+
+
+const vendasAmanha = [10, 50, 120, 30];
+console.log(fecharCaixa(vendasAmanha));
+
+
+
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar a diferença entre return e console.log?
-   [ ] Commit nos DOIS GitHubs:
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem explicar a diferença entre return e console.log?
+   [✅] Commit nos DOIS GitHubs:
         git commit -m "Semana 06 resolvida — dupla X & Y"
    ============================================================ */
